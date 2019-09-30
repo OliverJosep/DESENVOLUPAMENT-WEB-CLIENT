@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act11.b</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        var people = 0;
+        var men = 0, women = 0;
+        var age2 = 0;
+        var oldWomenID, ageOldWomen = 0;
+        var youngMenID, ageYoungMen = 0;
+        do {
+            var id = prompt('ID: ');
+            var age = prompt('Age: ');
+            var sex = prompt('Sex(male/female): ');
+            people++;
+            if (sex == 'male') men++;
+            if (sex == 'female') women++;
+            if (age >= 18 && age <= 65 && sex == 'male') age2++;
+            if (sex == 'female' && age > ageOldWomen) {
+                oldWomenID = id;
+                ageOldWomen = age;
+            }
+            if (sex == 'male' && age < ageYoungMen) {
+                youngMenID = id;
+                youngMenID = age;
+            }
+        } while (id != 0);
+
+        document.write('How many people are there? ' + people);
+        document.write('<br/>How many men are there? ' + men);
+        document.write('<br/>How many women are there? ' + women);
+        document.write('<br/>How many men are between 18 and 65 years old? ' + age2);
+        document.write('<br/>What is the name of the oldest woman? ' + ageOldWomen);
+        document.write('<br/>What is the ID number of the youngest man? ' + ageYoungMen);
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act11.a</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        var sum = 0;
+
+        do {
+            var number = prompt('Wrtite a number: ');
+            if (number != 9999) sum += parseInt(number); 
+        } while (number != 9999);
+
+        if (sum > 0) document.write('POSITIVE!');
+        if (sum < 0) document.write('NEGATIVE!');
+        if (sum == 0) document.write('ZERO');
+
+    </script>
+
+</body>
+</html>

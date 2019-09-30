@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act11.c</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+
+        var total = 0;
+        do {
+            var name = prompt('Name: ');
+            var account = prompt('Account number:');
+            var money = prompt('Money: ');
+
+            document.write('<br/>Client Name: ' + name);
+            document.write('<br/>Account number: ' + account);
+            document.write('<br/>Money:' + money);
+
+            total += parseInt(money);
+
+        } while (name != "")
+
+        document.write('<br/>Total: '+ total);
+
+    </script>
+
+</body>
+</html>
