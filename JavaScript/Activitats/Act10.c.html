@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Act10.c</title>
+
+</head>
+<body>
+
+	<script type="text/javascript">
+
+    function itsEqual(number) {
+        var numberString=String(number);
+        for (var i = 1; i < numberString.length; i++){
+            if (numberString.charAt(0)!=numberString.charAt(i)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    var x = 10;
+    count = 0;
+
+    while (count < 25) {
+        if (itsEqual(x)){
+            document.write(x + ' ');
+            count++;
+        }
+        x++;
+    }
+
+    
+
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act10.g</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+    
+    var i = 0;
+    var count = 0;
+    var total = 0;
+    
+    while (i < 5) {
+        var salary = prompt('Salary:');
+        if (salary > 500 && salary < 1000) {
+            count++;
+        }
+        total = (total + parseInt(salary));
+        i++;
+    }
+    document.write('between 500€ and 1000€: ' + (count) + '<br/>');
+    document.write('bigger than 1000€: ' + (5 - count) + '<br/>');
+    document.write('total: ' + total + '€');
+
+  </script>
+
+</body>
+</html>
