@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act12.g</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+        
+        let class1 = prompt('Class 1: ');
+        let class2 = prompt('Class 2: ');
+        let class3 = prompt('Class 3: ');
+
+        let avg1 = 0, avg2 = 0, avg3 = 0;
+        let sum = 0;
+        for (let i = 0; i < class1; i++) {
+            let n = prompt('Mark class 1: ');
+            sum = sum + parseInt(n);
+        }
+        avg1 = sum/class1;
+        sum = 0;
+        for (let i = 0; i < class2; i++) {
+            let n = prompt('Mark class 2: ');
+            sum = sum + parseInt(n);
+        }
+        avg2 = sum/class2;
+        sum = 0;
+        for (let i = 0; i < class3; i++) {
+            let n = prompt('Mark class 3: ');
+            sum = sum + parseInt(n);
+        }
+        avg3 = sum/class3;
+
+        document.write('Class 1: ' + avg1 + '<br/>');
+        document.write('Class 2: ' + avg2 + '<br/>');
+        document.write('Class 3: ' + avg3 + '<br/>');
+
+        if (avg1 > avg2 && avg1 > avg3) document.write('Best average class 1: ' + avg1 + '<br/>');
+        if (avg2 > avg1 && avg2 > avg3) document.write('Best average class 2: ' + avg2 + '<br/>');
+        if (avg3 > avg1 && avg3 > avg2) document.write('Best average class 3: ' + avg3 + '<br/>');
+
+    </script>
+    
+</body>
+</html>

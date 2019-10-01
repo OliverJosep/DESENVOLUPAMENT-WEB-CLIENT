@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act13.a</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+        function minimum(n1,n2,n3) {
+
+            if (n1 < n2 && n1 < n3) return n1;
+            if (n2 < n1 && n2 < n3) return n2;
+            if (n3 < n1 && n3 < n2) return n3;
+        
+        }
+
+        let aux1 = prompt('Number 1: ');
+        let aux2 = prompt('Number 2: ');
+        let aux3 = prompt('Number 3: ');
+
+        document.write(minimum(aux1,aux2,aux3));
+
+    </script>
+    
+</body>
+</html>

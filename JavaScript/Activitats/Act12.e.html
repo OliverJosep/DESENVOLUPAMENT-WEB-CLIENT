@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act12.e</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+        let equilateral = 0;
+        let isosceles = 0;
+        let scalene = 0;
+        
+		for (let i = 0; i < 3; i++) {
+            let side1 = prompt('Introduce the first side: ');
+            let side2 = prompt('Introduce the second side: ');
+            let side3 = prompt('Introduce the third side: ');
+
+            if (side1 == side2 == side3){
+                document.write('Triangle number ' + (i+1) + ': Equilateral<br/>');
+                equilateral++;
+            } else if (side1 == side2 || side1 == side3 || side2 == side3) {
+                document.write('Triangle number ' + (i+1) + ': Isosceles<br/>');
+                isosceles++;
+            } else {
+                document.write('Triangle number ' + (i+1) + ': Scalene<br/>');
+                scalene++;
+            }
+            document.write('Equilateral: ' + equilateral + '<br/>');
+            document.write('Isosceles: ' + isosceles + '<br/>');
+            document.write('Scalene: ' + scalene + '<br/>');
+
+        }
+
+    </script>
+    
+</body>
+</html>

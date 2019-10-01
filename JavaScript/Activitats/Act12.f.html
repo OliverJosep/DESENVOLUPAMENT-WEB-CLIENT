@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act12.f</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+        let neg = 0;
+        let pos = 0;
+        let odd = 0;
+        let pair = 0;
+
+        for (let i = 0; i < 10; i++) {
+            var n = prompt('Introduce a number: ')
+            if (n < 0) neg++;
+            if (n >= 0) pos++;
+            if (n % 2 != 0) odd++;
+            if (n % 2 == 0) pair = pair + parseInt(n);
+        }
+
+        document.write("How many positive numbers are there? " + pos + '<br/>');
+        document.write("How many negative numbers are there? " + neg + '<br/>');
+        document.write("How many odd numbers are there? " + odd + '<br/>');
+        document.write("What is the sum of the pair numbers? " + pair + '<br/>');
+
+    </script>
+    
+</body>
+</html>
