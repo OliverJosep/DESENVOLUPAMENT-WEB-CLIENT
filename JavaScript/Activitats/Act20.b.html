@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act20.b</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        function oneText() {
+            var t1 = document.getElementById('text1').value;
+            var t2 = document.getElementById('text2').value;
+            if (t1.length > t2.length) {
+                alert('The text 1 is bigger: ' + t1 )
+            } else {
+                alert('The text 2 is bigger: ' + t2 )
+            }
+
+        }
+    </script>
+
+    <form>
+        Text1: <input type="text" id="text1"> <br/>
+        Text2: <input type="text" id="text2"> <br/>
+        <input type="button" onClick="oneText()" value="The biggest one">
+    </form>
+
+</body>
+</html>

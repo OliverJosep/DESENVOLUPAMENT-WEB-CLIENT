@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act18.f</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+    
+        let phrase = prompt('Write a phrase: ');
+        
+        function printLine(word){
+            
+            for (i = 0; i < word.length; i++) {
+
+                if (word.charAt(i) == " ") {
+                    document.write('<br/>')
+                } else {
+                    document.write(word.charAt(i))
+                }
+            }
+            
+            return sepWord;
+        }
+
+        document.write(printLine(phrase));
+        
+    </script>
+
+</body>
+</html>

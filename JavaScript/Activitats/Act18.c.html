@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act18.c</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+        let word = prompt('Write a word:');
+
+        function compruebaPalindromo(word){
+            word = word.toLowerCase();
+            reverseWord = word.split("").reverse().toString();
+
+              for (var i = 0; i < reverseWord.length - 1; i++) {
+                reverseWord = reverseWord.replace(",","");
+              }
+
+              if (word == reverseWord){
+                document.write("Palindrome");
+              } else{
+                document.write("No palindrome");
+              }
+        }
+
+        compruebaPalindromo(word);
+    </script>
+
+</body>
+</html>

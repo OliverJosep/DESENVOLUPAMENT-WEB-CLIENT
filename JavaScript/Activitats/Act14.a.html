@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act14.a</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+        function Addition(value1, value2) {
+
+            this.value1 = value1;
+            this.value2 = value2;
+            this.result = add;
+
+            function add() {
+                return value1 + value2;
+            }
+            return this;
+        }
+
+        let addO = Addition(5,5);
+        document.write(addO.result());
+
+    </script>
+    
+</body>
+</html>

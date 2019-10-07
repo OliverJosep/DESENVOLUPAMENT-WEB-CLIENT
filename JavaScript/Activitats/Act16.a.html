@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act16.a</title>
+</head>
+<body>
+
+	<SCRIPT type="text/javascript">
+
+		numbers = new Array();
+
+		for (let i = 0; i < 8; i++) {
+			numbers[i] = prompt('Numbers: ');
+		}
+
+		function calculateSum(numbers) {
+
+			let sum = 0;
+
+			for (let i = 0; i < numbers.length; i++) {
+				sum = sum + parseInt(numbers[i]);
+			}
+
+			return sum;
+		}
+
+		function calculateAvg(numbers) {
+
+			let sum = calculateSum(numbers);
+			let avg = sum / numbers.length;
+
+			return avg;
+		}
+
+		function calculateSum5(numbers) {
+
+			let sum = 0;
+
+			for (let i = 0; i < numbers.length; i++) {
+				if (numbers[i] > 5) sum = sum + parseInt(numbers[i]);
+			}
+
+			return sum;
+
+		}
+
+		document.write(calculateSum(numbers));
+		document.write('<br/>');
+		document.write(calculateAvg(numbers));
+		document.write('<br/>');
+		document.write(calculateSum5(numbers));
+        
+    </SCRIPT>
+
+</body>
+</html>

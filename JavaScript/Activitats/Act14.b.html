@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act14.b</title>
+</head>
+<body>
+
+	<script type="text/javascript">
+		
+        function Company(nameCompany, topAge){
+            this.nameCompany = nameCompany;
+            this.topAge = topAge;
+            return this;
+
+        }
+
+        let company1 = Company('Mercadona', 50);
+
+        function Person(name, age) {
+
+            this.name = name;
+            this.age = age;
+            
+            if (age < company1.topAge) {
+                document.write('Yeaah ' + name + ', you can work in ' + company1.nameCompany + '!<br/>');
+            }
+
+            return name + ' ' + age;
+        }
+
+        let person1 = Person('Tomeu',18);
+        let person2 = Person('Bernat',50);
+
+
+
+    </script>
+    
+</body>
+</html>
