@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act22.c</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+    let price = 0;
+        function food() {
+            let pro=document.getElementById('pizza');
+            price = document.getElementById('price').value=pro.options[pro.selectedIndex].value;
+        }
+        function calculateTotal() {
+            let quantity = document.getElementById('quantity').value;
+            document.getElementById('total').value = (price * quantity) + '€';
+        }
+    </script>
+
+    <form>
+        Pizza:
+        <select id="pizza" onChange="food()">
+            <option>Choose:</option>
+            <option value="6">Pepperoni</option>
+            <option value="5">Quatro Formaggi</option>
+            <option value="4">Procciuto</option>
+        </select>
+        <br>
+        Price: <input type="text" id="price"><br>
+        Quantity: <input type="text" id="quantity"> <br/>
+        <input type="button" onClick="calculateTotal()" value="Calulate!">
+        <br/><br/>
+        Total: <input type="text" id="total"><br>
+   </form>
+
+</body>
+</html>

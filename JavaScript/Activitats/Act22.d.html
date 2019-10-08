@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act22.d</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        let mark = 0;
+
+        function totalMark(){
+            document.getElementById('total').value=mark;
+        }
+
+        function activity1() {
+            let a1 = document.getElementById('act1');
+            if (document.getElementById('act1').value=a1.options[a1.selectedIndex].value == 1){
+                mark = mark + 2.5;
+            }
+        }
+        function activity2() {
+            let a2 = document.getElementById('act2');
+            if (document.getElementById('act2').value=a2.options[a2.selectedIndex].value == 1){
+                mark = mark + 2.5;
+            }
+        }
+        function activity3() {
+            let a3 = document.getElementById('act3');
+            if (document.getElementById('act3').value=a3.options[a3.selectedIndex].value == 1){
+                mark = mark + 2.5;
+            }
+        }
+        function activity4() {
+            let a4 = document.getElementById('act4');
+            if (document.getElementById('act4').value=a4.options[a4.selectedIndex].value == 1){
+                mark = mark + 2.5;
+            }
+        }
+        
+    </script>
+
+    <form>
+        2 + 2:
+        <select id="act1" onChange="activity1()">
+            <option>Choose:</option>
+            <option value="1">4</option>
+            <option value="2">5</option>
+            <option value="2">6</option>
+            <option value="2">2</option>
+        </select>
+        <br>
+        5 * 3:
+        <select id="act2" onChange="activity2()">
+            <option>Choose:</option>
+            <option value="2">52</option>
+            <option value="2">4</option>
+            <option value="1">15</option>
+            <option value="2">8</option>
+        </select>
+        <br>
+        3 - 7:
+        <select id="act3" onChange="activity3()">
+            <option>Choose:</option>
+            <option value="1">-4</option>
+            <option value="2">5</option>
+            <option value="2">10</option>
+            <option value="2">4</option>
+        </select>
+        <br>
+        4 / 4:
+        <select id="act4" onChange="activity4()">
+            <option>Choose:</option>
+            <option value="2">5</option>
+            <option value="1">1</option>
+            <option value="2">4</option>
+            <option value="2">2</option>
+        </select>
+        <br/>
+        <input type="button" onClick="totalMark()" value="validate">
+
+        <input type="text" id="total"><br>
+   </form>
+
+</body>
+</html>

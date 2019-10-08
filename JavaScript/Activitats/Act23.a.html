@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act23.a</title>
+</head>
+<body>
+
+    <script type="text/javascript"> 
+        function selected() {
+        let text = "";
+        if (document.getElementById('checkbox1').checked) {
+            text = text + 'Football ';
+        }
+        if (document.getElementById('checkbox2').checked) {
+            text = text + 'Tennis ';
+        }
+        if (document.getElementById('checkbox3').checked) {
+            text = text + 'Karate ';
+        }
+        alert('You selected: ' + text);
+        }
+    </script> 
+       
+
+    <form>
+        <input type="checkbox" id="checkbox1">Football
+        <br>
+        <input type="checkbox" id="checkbox2">Tennis
+        <br>
+        <input type="checkbox" id="checkbox3">Karate
+        <br>
+        <input type="button" value="Count" onClick="selected()">
+    </form>
+
+</body>
+</html>

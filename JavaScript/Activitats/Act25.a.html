@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act25.a</title>
+</head>
+<body>
+
+    <script type="text/javascript"> 
+         function checkNumChars(){
+            alert('Name: ' + document.getElementById('name').value + 
+            '\nEmail: ' + document.getElementById('email').value + 
+            '\nComments: ' + document.getElementById('com').value);
+        }
+    </script> 
+       
+
+    <form>
+        Name:<textarea id="name" rows="1" cols="50" ></textarea> <br/>
+        Email:<textarea id="email" rows="1" cols="50" ></textarea> <br/>
+        Comments:<textarea id="com" rows="5" cols="50" ></textarea> <br/>
+        <input type="button" value="Check" onClick="checkNumChars()">
+    </form>
+
+</body>
+</html>

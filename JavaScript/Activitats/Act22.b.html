@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act22.b</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        function calculateCost() {
+            let pro = document.getElementById('processor');
+            let pricePro = document.getElementById('pricePro').value=pro.options[pro.selectedIndex].value;
+            let mon = document.getElementById('monitor');
+            let priceMon = document.getElementById('priceMon').value=mon.options[mon.selectedIndex].value;
+            let hd = document.getElementById('hd');
+            let priceHD = document.getElementById('priceHD').value=hd.options[hd.selectedIndex].value;
+            document.getElementById('total').value = (parseInt(pricePro) + parseInt(priceMon) + parseInt(priceHD)) + '€';
+        }
+    </script>
+
+    <form>
+        Processor:
+        <select id="processor" onChange="calculateCost()">
+            <option>Choose:</option>
+            <option value="400">Intel I3</option>
+            <option value="600">Intel I5</option>
+            <option value="800">Intel I7</option>
+        </select>
+        <br>
+        Price: <input type="text" id="pricePro"><br>
+        Monitor:
+        <select id="monitor" onChange="calculateCost()">
+            <option>Choose:</option>
+            <option value="250">Samsung 20'</option>
+            <option value="350">Samsung 22'</option>
+            <option value="550">Samsung 26'</option>
+        </select>
+        <br>
+        Price: <input type="text" id="priceMon"><br>
+        Hard Disk:
+        <select id="hd" onChange="calculateCost()">
+            <option>Choose:</option>
+            <option value="300">500 Gb</option>
+            <option value="440">1 Tb</option>
+            <option value="500">3 Tb</option>
+        </select>
+        <br>
+        Price: <input type="text" id="priceHD"><br>
+        <br/><br/>
+        Total: <input type="text" id="total"><br>
+   </form>
+
+</body>
+</html>

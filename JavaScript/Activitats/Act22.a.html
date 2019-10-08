@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act22.a</title>
+</head>
+<body>
+
+    <script type="text/javascript">
+        function food() {
+            let pro=document.getElementById('pizza');
+            document.getElementById('price').value=pro.options[pro.selectedIndex].value;
+        }
+    </script>
+
+    <form>
+        Pizza:
+        <select id="pizza" onChange="food()">
+            <option>Choose:</option>
+            <option value="6€">Pepperoni</option>
+            <option value="5€">Quatro Formaggi</option>
+            <option value="4€">Procciuto</option>
+        </select>
+        <br>
+        Price: <input type="text" id="price"><br>
+   </form>
+
+</body>
+</html>
