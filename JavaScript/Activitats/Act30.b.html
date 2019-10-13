@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Act30.b</title>
+</head>
+<body>
+
+    <script type="text/javascript"> 
+        var myWindow;
+        function openWindow() { 
+            let w = screen.availWidth/2;
+            let h = screen.availHeight
+            myWindow = window.open('','','status=yes,width='+w+',height='+h+',menubar=yes'); 
+        }
+        function closeWindow() { 
+            myWindow.close();
+        }
+    </script> 
+
+    <input type="button" value="Pop-up" onClick="openWindow()" >
+    <input type="button" value="Close Window" onClick="closeWindow()" >
+
+</body>
+</html>
+
+

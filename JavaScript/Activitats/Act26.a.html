@@ -1,0 +1,29 @@
+<html>
+<head>
+
+    <title>Act26.a</title>
+
+</head>
+<body>
+<script type="text/javascript">
+
+    function empty(control){
+        control.value='';
+    }
+
+    function checkEntry(control){
+        if (control.value.length < 7 || control.value.length > 20) {
+            alert('Wrong password');
+        }
+    }
+</script>
+
+<form>
+    <input type="text" id="user" onFocus="empty(this)" value="User">
+    <br>
+    <input type="password" id="password" onFocus="empty(this)" onBlur="checkEntry(this)" value="password">
+    <br>
+</form>
+
+</body>
+</html>
