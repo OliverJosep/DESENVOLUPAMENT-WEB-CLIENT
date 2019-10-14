@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Rate</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link rel="stylesheet"  href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"/>
+    <script src="https://kit.fontawesome.com/dbd22f0a6a.js" crossorigin="anonymous"></script>
+    <script src="Rate.js"></script>
+
+    <script>
+      function printList() {
+        var txt = "";
+        for (var i = 0; i < list.length; i++) {
+          var info = list[i].info();
+          txt =
+            txt +
+            "<li class='list-group-item'>" +
+            "<span class='badge badge-primary badge-pill'>" +
+            i +
+            "</span> " +
+            info +
+            "</li>";
+        }
+        var u = document.getElementById("list");
+        u.innerHTML = txt;
+        var n = document.getElementById("numRents");
+        n.innerText = list.length;
+      }
+
+      function printRedeemableList() {
+        var txt = "";
+        for (var i = 0; i < list.length; i++) {
+          var info = list[i].info();
+          if (list[i].getRedeemable() == true) {
+            txt =
+              txt +
+              "<li class='list-group-item'>" +
+              "<span class='badge badge-primary badge-pill'>" +
+              i +
+              "</span> " +
+              info +
+              "</li>";
+          }
+        }
+        var u = document.getElementById("list");
+        u.innerHTML = txt;
+      }
+
+      function printBetween() {
+        var txt = "";
+        for (var i = 0; i < list.length; i++) {
+          var info = list[i].info();
+          if (list[i].getPriceHour() > 50 && list[i].getPriceHour() < 100) {
+            txt =
+              txt +
+              "<li class='list-group-item'>" +
+              "<span class='badge badge-primary badge-pill'>" +
+              i +
+              "</span>  " +
+              info +
+              "</li>";
+          }
+        }
+        var u = document.getElementById("list");
+        u.innerHTML = txt;
+      }
+
+      function newRate() {
+        var id = document.getElementById("idT").value;
+        var name = document.getElementById("name").value;
+        var priceHour = document.getElementById("priceHour").value;
+        if (
+          document.getElementById("redeemable").value.toLowerCase() == "yes"
+        ) {
+          var redeemable = true;
+        } else {
+          var redeemable = false;
+        }
+        var rate = new Rate(id, name, priceHour, redeemable);
+        return rate;
+      }
+
+      function addBeginning() {
+        var rate = newRate();
+        list.unshift(rate);
+        printList();
+      }
+      function addEnding() {
+        var rate = newRate();
+        list.push(rate);
+        printList();
+      }
+      function removeBeginning() {
+        list.shift();
+        printList();
+      }
+      function removeEnding() {
+        list.pop();
+        printList();
+      }
+      function sortAsc() {
+        list.sort(function(a, b) {
+          return a.priceHour > b.priceHour ? 1 : -1;
+        });
+        printList();
+      }
+      function sortDesc() {
+        list.sort(function(a, b) {
+          return a.priceHour > b.priceHour ? -1 : 1;
+        });
+        printList();
+      }
+      function euro() {
+        for (t of list){
+          t.convertToEuro();
+        }
+        printList();
+      }
+      function dolar() {
+        for (t of list){
+          t.convertToDolar();
+        }
+        printList();
+      }
+    </script>
+  </head>
+  <body>
+    <br />
+    <div class="container-fluid">
+      <div class="card">
+        <h4 class="card-header">
+          <i class="fas fa-piggy-bank"></i> Rate Banks
+        </h4>
+        <div class="card-body">
+          <h5 class="card-title">
+            <span id="numRents" class="badge badge-danger"></span> Rents
+          </h5>
+          <div class="card-title">
+            <ul id="list" class="list-group"></ul>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <form class="form-inline">
+            <div class="form-row">
+              <div class="col">
+                <label for="item">Rate ID:</label>
+                <input class="form-control" type="number" id="idT" />
+              </div>
+              <div class="col">
+                <label for="item">Rate name:</label>
+                <input class="form-control" type="text" id="name" />
+              </div>
+              <div class="col">
+                <label for="item">Price per hour:</label>
+                <input class="form-control" type="number" id="priceHour" />
+              </div>
+              <div class="col">
+                <label for="item">Redeemable(Yes/No):</label>
+                <input class="form-control" type="text" id="redeemable" />
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="card-footer">
+          <button type="button" class="btn btn-primary" onclick="addBeginning()">
+            ADD BEGINNING
+          </button>
+          <button type="button" class="btn btn-primary" onclick="addEnding()">
+            ADD ENDING
+          </button>
+          <button type="button" class="btn btn-danger" onclick="removeBeginning()">
+            REMOVE BEGINNING
+          </button>
+          <button type="button" class="btn btn-danger" onclick="removeEnding()">
+            REMOVE ENDING
+          </button>
+          <button type="button" class="btn btn-success" onclick="sortAsc()">
+            DESCENDING ORDER
+          </button>
+          <button type="button" class="btn btn-success" onclick="sortDesc()">
+            ASCENDING ORDER
+          </button>
+          <button type="button" class="btn btn-warning" onclick="printList()">
+            SHOW ALL
+          </button>
+          <button type="button" class="btn btn-warning" onclick="printBetween()">
+            SHOW BETWEEN 50 AND 100
+          </button>
+          <button type="button" class="btn btn-warning" onclick="printRedeemableList()">
+            SHOW REDEEMABLES
+          </button>
+          <button type="button" class="btn btn-info" onclick="euro()">
+            EUROS
+          </button>
+          <button type="button" class="btn btn-info" onclick="dolar()">
+            DOLARS
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      var list = [];
+
+      list[0] = new Rate("002", "Basic", 15, false);
+      list[1] = new Rate("028", "Expert", 30, true);
+      list[2] = new Rate("123", "Medium", 55, true);
+      list[3] = new Rate("009", "Profesional", 70, false);
+
+      printList();
+    </script>
+  </body>
+</html>
