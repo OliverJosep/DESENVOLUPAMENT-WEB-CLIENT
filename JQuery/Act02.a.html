@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act02.a</title>
+  </head>
+  <body>
+    <script>
+
+      $(document).ready(function(){
+        $("#row1").click(function(){
+          $(this).css("background-color", "red")
+        });
+        $("#row2").click(function(){
+          $(this).css("background-color", "blue")
+        });
+        $("#row3").click(function(){
+          $(this).css("background-color", "green")
+        });
+      }); 
+      
+    </script>
+
+    <table style="border: 1px solid">
+      <tr id="row1">
+        <td>Row 1</td>
+      </tr>
+      <tr id="row2">
+        <td>Row 2</td>
+      </tr>
+      <tr id="row3">
+        <td>Row 3</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act04.a</title>
+  </head>
+  <body>
+    <script>
+
+      $(document).ready(function(){
+        $("#t1 #row1").click(function(){
+          $(this).css("background-color", "red");
+          $("#t2 #row1").css({
+            fontSize: 25
+          });
+        });
+        $("#t1 #row2").click(function(){
+          $(this).css("background-color", "blue")
+          $("#t2 #row2").css({
+            fontSize: 25
+          });
+        });
+        $("#t1 #row3").click(function(){
+          $(this).css("background-color", "green")
+          $("#t2 #row3").css({
+            fontSize: 25
+          });
+        });
+      }); 
+      
+    </script>
+
+    <table id="t1" style="border: 1px solid">
+      <tr id="row1">
+        <td>Row 1</td>
+      </tr>
+      <tr id="row2">
+        <td>Row 2</td>
+      </tr>
+      <tr id="row3">
+        <td>Row 3</td>
+      </tr>
+    </table>
+    <table id="t2" style="border: 1px solid">
+        <tr id="row1">
+          <td>Row 1</td>
+        </tr>
+        <tr id="row2">
+          <td>Row 2</td>
+        </tr>
+        <tr id="row3">
+          <td>Row 3</td>
+        </tr>
+      </table>
+  </body>
+</html>

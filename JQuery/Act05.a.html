@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act04.a</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function(){
+        $("#small").click(function(){
+            $("p:odd").css({
+              fontSize: 10
+            })
+        });
+        $("#medium").click(function(){
+            $("p:odd").css({
+              fontSize: 15
+            })
+        });
+        $("#big").click(function(){
+            $("p:odd").css({
+              fontSize: 20
+            })
+        });
+      });
+    </script>
+
+    <h1>H1</h1>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+
+    <button id="small">Small (10px)</button>
+    <button id="medium">Medium (15px)</button>
+    <button id="big">Big (20px)</button>
+
+  </body>
+</html>
