@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act08.a</title>
+    <style>
+      .bg { 
+        background-color:#333; 
+        color: aliceblue;
+      } 
+      .bg2 { 
+        background-color: tomato; 
+        color: yellow;
+      } 
+    </style>
+  </head>
+  <body>
+    <script>
+
+      $(document).ready(function(){
+        $("#b1").click(function(){
+          linkClass();
+        });
+        $("#b2").click(function(){
+          unlinkClass();
+        });
+      }); 
+    
+      
+      function linkClass() { 
+        var x=$("#text1");
+        var y=$("#text2");
+        x.addClass("bg");
+        y.addClass("bg2");
+
+      }
+
+      function unlinkClass() {    
+        var x=$("#text1"); 
+        var y=$("#text2");
+        x.removeClass("bg");
+        y.removeClass("bg2");
+      } 
+
+    </script>
+    <input type="button" id="b1" value="Link Class">
+    <input type="button" id="b2" value="Unlink Class">
+
+    <div>
+      <p id="text1">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        Odit enim quam libero animi hic nulla vitae sunt iste magnam 
+        eius error rerum quo, laborum a voluptatem. Maiores necessitatibus 
+        commodi suscipit.
+      </p>
+      <p id="text2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+        Odit enim quam libero animi hic nulla vitae sunt iste magnam 
+        eius error rerum quo, laborum a voluptatem. Maiores necessitatibus 
+        commodi suscipit.
+      </p>
+    </div>
+  </body>
+</html>

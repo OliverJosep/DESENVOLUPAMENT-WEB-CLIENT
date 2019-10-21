@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act07.a</title>
+  </head>
+  <body>
+    <script>
+      var x;
+      x=$(document);
+      x.ready(initEvents);
+      
+      function initEvents() {
+        var x=$("#b1");
+        x.click(addGoogle);
+        x=$("#b2");
+        x.click(addYoutube);
+        x=$("#b3");
+        x.click(addtwitter);
+      }
+      
+      function addGoogle() {
+        var x=$("#a1");
+        x.attr("href", "https://www.google.es");
+      }
+      
+      function addYoutube() {
+        var x=$("#a1");
+        x.attr("href", "https://www.youtube.com");
+      }
+      
+      function addtwitter() {
+        var x=$("#a1");
+        x.attr("href", "https://www.twitter.com");
+      } 
+    </script>
+
+    <input type="button" id="b1" value="Google"><br>
+    <input type="button" id="b2" value="Youtube"><br>
+    <input type="button" id="b3" value="Twitter">
+    <br>
+    <table>
+      <a id="a1" href="">Link</a>
+    </table>
+
+  </body>
+</html>

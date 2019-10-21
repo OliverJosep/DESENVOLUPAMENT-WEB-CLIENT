@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Llista</title>
+  </head>
+  <body>
+    <div>
+      <div id="economic">
+        <p id="e01" class="canviable">e01, Economic1, <b>15€</b> Canviable</p>
+        <p id="e02" class="noCanviable">e02, Economic2, <b>10€</b> No canviable</p>
+      </div>
+      <div id="basica">
+        <p id="b01" class="nocanviable">b01, Basica1, <b>5€</b> No canviable</p>
+        <p id="b02" class="noCanviable">b02, Basica2, <b>7.5€</b> No canviable</p>
+      </div>
+      <div id="legendaria">
+        <p id="l01" class="canviable">e01, Legendaria1, <b>30€</b> Canviable</p>
+        <p id="l01" class="canviable">e02, Legendaria2, <b>100€</b> Canviable</p>
+      </div>
+    </div>
+    
+    <div>
+      <label><b>ID:</b></label>
+      <input type="text" id="t1"/>
+      <button id="b1">SELECT BY ID</button>
+
+      <label><b>CLASS:</b></label>
+      <input type="text" id="t2"/>
+      <button id="b2">SELECT BY ID</button>
+
+      <label><b>TAG:</b></label>
+      <input type="text" id="t2"/>
+      <button id="b3">SELECT BY ID</button>
+    </div>
+
+
+    <script>
+      $(document).ready(function(){
+      $("#b1").click(function(){
+        $("div, p, b,h1").css({"background-color":"white"});
+        var vT1 = $("#t1").val();
+        var eSeleccionat = $("#"+vT1);
+        eSeleccionat.css({"background-color":"red"});
+      });
+      $("#b2").click(function(){
+        $("div, p, b, h1").css({"background-color":"white"});
+        var vT2 = $("#t2").val();
+        var eSeleccionat = $("."+vT2);
+        eSeleccionat.css({"background-color":"red"});
+      });
+      $("#b3").click(function(){
+        $("div, p, b, h1").css({"background-color":"white"});
+        var vT3 = $("#t3").val();
+        var eSeleccionat = $(vT3);
+        eSeleccionat.css({"background-color":"red"});
+      });
+    });
+
+    </script>
+  </body>
+</html>
