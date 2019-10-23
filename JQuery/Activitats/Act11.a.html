@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act11.a</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function() {
+        $("td").mouseover(function() {
+          $(this).css("background-color", "#e3e");
+        });
+        $("td").mouseout(function() {
+          $(this).css("background-color", "#fff");
+        });
+      });
+    </script>
+
+    <table border="1px solid">
+      <tr>
+        <td>hola</td>
+        <td>hola</td>
+      </tr>
+      <tr>
+        <td>hola</td>
+        <td>hola</td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act09.a</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function() {
+        $("#b1").click(function() {
+          alert($("head").html());
+        });
+        $("#b2").click(function() {
+          alert($("body").html());
+        });
+      });
+    </script>
+    <input type="button" id="b1" value="Show head" />
+    <input type="button" id="b2" value="Show body" />
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act13.a</title>
+    <style>
+      .bg {
+        width: 200px;
+        height: 200px;
+        background: orange;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+
+      $(document).ready(function() {
+        var x
+        x = $(".bg");
+        x.mousemove(moveMouse)
+        x.mouseleave(noMouse)
+      });
+      function moveMouse(event) {
+        x=$("#x");
+        x.text("X:"+event.clientX);
+        y=$("#y");
+        y.text("Y:"+event.clientY);
+      }
+
+      function noMouse() {
+        x=$("#x");
+        x.text("Out of the div");
+        y=$("#y");
+        y.text("");
+
+      }
+
+    </script>
+    <div class="bg">
+      <p id="x"></p>
+      <p id="y"></p>
+    </div>
+  </body>
+</html>

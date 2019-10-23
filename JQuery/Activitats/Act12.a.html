@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act12.a</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function() {
+        $("td").hover(enterMouse, exitMouse);
+      });
+
+      function enterMouse() {
+        $("td").css("background-color", "orange");
+      }
+      function exitMouse() {
+        $("td").css("background-color", "#FFF");
+      }
+    </script>
+
+    <table border="1px solid">
+      <tr>
+        <td>hola</td>
+        <td>hola</td>
+      </tr>
+      <tr>
+        <td>hola</td>
+        <td>hola</td>
+      </tr>
+    </table>
+  </body>
+</html>
