@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act16.a</title>
+    <style>
+      input{
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function() {
+        $("input").focus(function() {
+          $(this).css("color", "red");
+        });
+      });
+    </script>
+
+    <form>
+      <input type="text" value="blue" />
+    </form>
+  </body>
+</html>

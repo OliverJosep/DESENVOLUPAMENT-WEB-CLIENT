@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act17.a</title>
+    <style>
+      #text1, #text2 { color:#00f; } 
+    </style>
+  </head>
+  <body>
+    <script>
+      var x;
+ x=$(document);
+x.ready(initEvents);
+
+function initEvents() {
+var x=$("#text1");
+x.focus(getFocus);
+x.blur(loseFocus);
+x=$("#text2");
+x.focus(getFocus);
+x.blur(loseFocus);
+}
+
+function getFocus() {
+var x=$(this);
+x.css("color","#f00");
+}
+
+function loseFocus() {
+var x=$(this);
+x.css("color","#00f");
+} 
+    </script>
+ <form action="#" method="post">
+Name: <input type="text" name="text1" id="text1" value="John" size="20"> <br>
+Surname: <input type="text" name="text2" id="text2" value="Smith" size="20">
+</form>
+    
+  </body>
+</html>

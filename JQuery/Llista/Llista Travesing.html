@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Llista</title>
+  </head>
+  <body>
+    <div>
+      <div id="economic">
+        <p id="e01" class="canviable">e01, Economic1, <b>15€</b> <span>Canviable</span></p>
+        <p id="e02" class="noCanviable">e02, Economic2, <b>10€</b> <span>No canviable</span></p>
+      </div>
+      <div id="basica">
+        <p id="b01" class="nocanviable">b01, Basica1, <b>5€</b> <span>No Canviable</span></p>
+        <p id="b02" class="noCanviable">b02, Basica2, <b>7.5€</b> <span>No canviable</span></p>
+      </div>
+      <div id="legendaria">
+        <p id="l01" class="canviable">l01, Legendaria1, <b>40€</b> <span>Canviable</span></p>
+        <p id="l02" class="canviable">l02, Legendaria2, <b>99€</b> <span>Canviable</span></p>
+      </div>
+    </div>
+
+    <div>
+      <label><b>ID:</b></label>
+      <input type="text" id="t1"/>
+      <button id="b1">SELECT BY ID</button>
+
+      <label><b>CLASS:</b></label>
+      <input type="text" id="t2"/>
+      <button id="b2">SELECT BY CLASS</button>
+
+      <label><b>TAG:</b></label>
+      <input type="text" id="t3"/>
+      <button id="b3">SELECT BY TAG</button>
+    </div>
+    <br>
+    <div>
+      <label><b>Rate:</b></label>
+        <select id="s1"  class="form-control mb-2">
+          <option value="economic">Economic</option>
+          <option value="basica">Basica</option>
+          <option value="legendaria">Legendaria</option>
+        </select>
+      <button id="b4">Més barato</button>
+      <button id="b5">Més barato canviable</button>
+      </div>
+    </div>
+
+
+    <script>
+      $(document).ready(function(){
+        $("#b1").click(function(){
+          $("div, p, b,h1").css({"background-color":"white"});
+          var vT1 = $("#t1").val();
+          var eSeleccionat = $("#"+vT1);
+          eSeleccionat.css({"background-color":"red"});
+        });
+        $("#b2").click(function(){
+          $("div, p, b, h1").css({"background-color":"white"});
+          var vT2 = $("#t2").val();
+          var eSeleccionat = $("."+vT2);
+          eSeleccionat.css({"background-color":"red"});
+        });
+        $("#b3").click(function(){
+          $("div, p, b, h1").css({"background-color":"white"});
+          var vT3 = $("#t3").val();
+          var eSeleccionat = $(vT3);
+          eSeleccionat.css({"background-color":"red"});
+        });
+
+        $("#b4").click(function() {
+          $("div, p, b, h1").css({"border": "0px"});
+          var rate = $("#s1").val().charAt(0);
+          var min = 9999;
+          $("p").each(function () {
+            var aux = $(this).attr('id').charAt(0);
+            if (rate == aux) {
+              var price = $(this).children().html().replace('€','');
+              if (parseInt(price) < min){
+                min = price;
+              }
+            }
+          });
+          $("p").each(function () {
+            var aux = $(this).attr('id').charAt(0);
+            if (rate == aux) {
+              var price = $(this).children().html().replace('€','');
+              if (price == min){
+                $(this).css({"border": "2px solid orange"});
+              }
+            }
+          });
+        });
+
+        $("#b5").click(function() {
+          $("div, p, b, h1").css({"border": "0px"});
+          var min = 9999;
+          $("p").each(function () {
+            var aux = $(this).children("span").html();
+            var price = $(this).children().html().replace('€','');
+            if (aux == "Canviable") {
+              if (parseInt(price)  < min){
+                console.log(min);
+                min = price;
+              }
+
+            }
+          });
+          $("p").each(function () {
+            var aux = $(this).attr('id').charAt(0);
+              var price = $(this).children().html().replace('€','');
+              if (price == min){
+                $(this).css({"border": "2px solid orange"});
+              }
+          });
+        });
+
+      });
+
+    </script>
+  </body>
+</html>

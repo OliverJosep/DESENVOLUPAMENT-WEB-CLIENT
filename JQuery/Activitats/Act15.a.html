@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act15.a</title>
+    <style>
+    
+      .bg{
+        background: orange;
+        width: 800px;
+        height: 70px;
+      }
+      .bg1{
+        background: orange;
+        width: 250px;
+        height: 250px;
+      }
+    
+    </style>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function() {
+        $("div").dblclick(change);
+      });
+
+      function change() {
+        $(this).toggleClass("bg1");
+      }
+    </script>
+
+    <div class="bg"></div>
+
+  </body>
+</html>

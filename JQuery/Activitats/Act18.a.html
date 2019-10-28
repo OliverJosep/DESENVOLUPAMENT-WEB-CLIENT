@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act18.a</title>
+    <style>
+    </style>
+  </head>
+  <body>
+  <script>
+    $(document).ready(function(){
+      $("#b1").click(function(){
+        $("form").append('<input type="text" value="Introduce"> <button type="button" onClick="removeButton()">Remove</button><br/>');
+      });
+    });
+
+    function removeButton() {
+      let x = $(this).index("button");
+      $(":text").eq(x).remove();
+      $("button").eq(x - 1).remove();
+      $("br").eq(x - 1).remove();
+    }
+  </script>
+  <form>
+  </form>
+  <button type="button" id="b1">Create camp</button><br/>
+  </body>
+</html>
