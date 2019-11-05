@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rates>
+  <rate name = "001">
+    <id>001</id>
+    <name>Basic</name>
+    <price>15€</price>
+    <redeemable>No</redeemable>
+  </rate>
+
+  <rate name = "002">
+    <id>002</id>
+    <name>Medium</name>
+    <price>30€</price>
+    <redeemable>Yes</redeemable>
+  </rate>
+
+  <rate name = "003">
+    <MARCA>003</MARCA>
+    <name>Expert</name>
+    <price>55€</price>
+    <redeemable>Yes</redeemable>
+  </rate>
+
+</rates>

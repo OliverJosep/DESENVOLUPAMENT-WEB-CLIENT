@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>AjaxPHP</title>
+    <style>
+      #table {
+        border: 1px solid;
+      }
+
+    </style>
+  </head>
+  <body>
+  <script>
+    $(document).ready(function(){
+      $("#rate").change(function(){
+      var selectedRent = $(this).children("option:selected").val();
+      loadPHPDoc(selectedRent);
+    });
+  });
+  </script>
+
+  <h1>Rate Banks</h1>
+  <p>Name:
+    <select id="rate">
+      <option>select</option>
+      <option>basic</option>
+      <option>medium</option>
+      <option>expert</option>
+    </select>
+  </p>
+
+  <p>Price: <span id="txt"></span></p>
+
+  <script>
+    function loadPHPDoc(rent) {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          document.getElementById("txt").innerHTML = this.responseText;
+        }
+      };
+      xmlhttp.open("GET", "list.php?req="+rent, true);
+      xmlhttp.send();
+    }
+
+  </script>
+
+  </body>
+</html>
+
+
+
+

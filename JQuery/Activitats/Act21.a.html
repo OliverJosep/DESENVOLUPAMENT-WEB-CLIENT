@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act21.a</title>
+    <style>
+      .div1{
+        background: orange;
+        width: 150px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+
+  <script>
+
+    $(document).ready(function() {
+      $(".div1").click(click);
+      $(".div1").dblclick(doubleClick);
+    });
+
+    function click(){
+      $(".div1").fadeTo('fast', 0.2);
+    }
+    function doubleClick(){
+      $(".div1").fadeTo('fast', 1);
+
+    }
+
+  </script>
+
+  <div class="div1">
+    <p>Hola</p>
+  </div>
+
+  </body>
+</html>

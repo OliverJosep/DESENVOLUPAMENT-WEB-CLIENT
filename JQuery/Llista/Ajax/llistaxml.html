@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>AjaxXML</title>
+    <style>
+      #table {
+        border: 1px solid;
+      }
+
+    </style>
+  </head>
+  <body>
+  <script>
+    $(document).ready(function(){
+    $("#rate").change(function(){
+      var selectedRent = $(this).children("option:selected").val();
+      loadXMLDoc(selectedRent)
+    });
+  });
+  </script>
+
+  <select id="rate">
+    <option>select</option>
+    <option>001</option>
+    <option>002</option>
+    <option>003</option>
+  </select>
+  <table id="table"></table>
+
+  <script>
+    function loadXMLDoc(rent) {
+      var xmlhttp = new XMLHttpRequest();
+      xmlhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          load(this, rent);
+        }
+      };
+      xmlhttp.open("GET", "llista.xml", true);
+      xmlhttp.send();
+    }
+
+    function load(xml, rent) {
+      var i;
+      var xmlDoc = xml.responseXML;
+      var table="<tr><th>Name</th><th>Price</th><th>Redeemable</th></tr>";
+      var x = xmlDoc.getElementsByName(rent);
+      console.log(x.length);
+      table += "<tr><td>" +
+        x[0].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("price")[0].childNodes[0].nodeValue +
+        "</td><td>" +
+        x[0].getElementsByTagName("redeemable")[0].childNodes[0].nodeValue +
+        "</td></td>";
+      document.getElementById("table").innerHTML = table;
+      }
+
+  </script>
+
+  </body>
+</html>
+
+
+
+

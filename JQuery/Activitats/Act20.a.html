@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act20.a</title>
+    <style>
+      .div1 {
+        background-color:orange;
+        width: 150px;
+        height: 150px;
+      }
+      .div2 {
+        background-color:blue;
+        width: 150px;
+        height: 150px;
+      }
+    </style>
+  </head>
+  <body>
+
+  <script>
+
+    $(document).ready(function() {
+      var x = $(".div1");
+      var y = $(".div2");
+      y.hide();
+      x.hover(function() {
+        x.fadeOut('slow');
+        y.fadeIn('slow');
+      }, function(){
+        x.fadeIn('slow');
+        y.fadeOut('slow');
+      });
+    });
+
+  </script>
+
+  <div class="div1">
+    <p>Hola p1</p>
+  </div>
+
+  <div class="div2">
+    <p>Hola p2</p>
+  </div>
+
+  </body>
+</html>

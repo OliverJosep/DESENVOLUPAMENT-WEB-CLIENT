@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>Act22.a</title>
+    <style>
+      table tr th{
+        border: 1px solid orange;
+      }
+      img {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+
+  <script>
+
+    $(document).ready(function() {
+      $(".b1").click(function(){
+        $("#img1").toggle("slow");
+      });
+      $(".b2").click(function(){
+        $("#img2").toggle("slow");
+      });
+    });
+  </script>
+
+  <table>
+    <tr>
+      <th><button class="b1">Camera</button><img id="img1" src="https://img.icons8.com/material/4ac144/256/camera.png"></th>
+      <th><button class="b2">Tooth</button><img id="img2" src="http://icons.iconarchive.com/icons/graphicloads/medical-health/256/teeth-icon.png"></th>
+    </tr>
+  </table>
+
+  </body>
+</html>
