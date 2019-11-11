@@ -39,6 +39,7 @@
         $("#select2 option").remove();
         redeem = $(this).children("option:selected").val();
         loadRents(redeem);
+        console.log(redeem)
 
       });
 
@@ -61,26 +62,25 @@
       }
 
       function loadRents(idRedeem){
-        var xhttp2 = new XMLHttpRequest();
-        xhttp2.onreadystatechange = function() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
           if (this.readyState == 4 && this.status == 200) {
             $("#text2").html(this.responseText);
             var rents = JSON.parse(this.responseText);
+
             for (rent in rents) {
               var id = rents[rent].id;
               var nameRent = rents[rent].name;
               var redeemable  = rents[rent].redeemable;
-              if (redeemable == idRedeem){
-                var item = $("<option/>", {value:id, text:nameRent});
-                $("#select2").append(item);
-              }
+              var item = $("<option/>", {value:id, text:nameRent});
+              $("#select2").append(item);
 
 
             }
           }
         };
-        xhttp2.open("GET", "rents.php", true);
-        xhttp2.send();
+        xhttp.open("GET", "rents.php?redeemable="+idRedeem, true);
+        xhttp.send();
       }
 
 
