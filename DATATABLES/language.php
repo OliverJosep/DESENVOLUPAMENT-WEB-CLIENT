@@ -64,8 +64,8 @@
       language: {
       <?php if (substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "ca") : ?>
         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Catalan.json"
-      <?php elseif (substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "en") : ?>
-        url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
+      <?php elseif (substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2) == "es") : ?>
+        url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/Spanish.json"
       <?php else : ?>
         url: "//cdn.datatables.net/plug-ins/1.10.19/i18n/English.json"
       <?php endif ?>
