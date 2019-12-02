@@ -38,7 +38,7 @@
               for (rent in rents) {
                 var id = rents[rent].id;
                 var nameRent = rents[rent].name;
-                var url  = "carroceria.php?id="+id;
+                var url  = "?id="+id;
                 var item = $("<a/>", {href:url, class:'dropdown-item', text:nameRent});
                 $("#meuDrop").append(item);
               }

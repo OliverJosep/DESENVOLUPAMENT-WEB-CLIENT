@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <title>AjaxTXT</title>
+    <style>
+      #table {
+        border: 1px solid;
+      }
+
+    </style>
+  </head>
+  <body>
+  <script>
+    $(document).ready(function(){
+      $("#b1").click(function(){
+        $("#div1").load("list.txt");
+      });
+    });
+  </script>
+  <div id="div1"></div>
+  <button id="b1">Load txt</button>
+  </body>
+</html>
+
+
+
+

@@ -2,7 +2,7 @@
 <html>
   <head>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>AjaxPHP</title>
+    <title>AjaxPHP-MySQL</title>
     <style>
       #table {
         border: 1px solid;
@@ -13,34 +13,23 @@
   <body>
   <script>
     $(document).ready(function(){
-      $("#rate").change(function(){
-      var selectedRent = $(this).children("option:selected").val();
-      loadPHPDoc(selectedRent);
+      $("#b1").click(loadPHPDoc)
     });
-  });
   </script>
 
-  <h1>Rate Banks</h1>
-  <p>Name:
-    <select id="rate">
-      <option>select</option>
-      <option>basic</option>
-      <option>medium</option>
-      <option>expert</option>
-    </select>
-  </p>
+  <button id="b1">Load</button>
 
-  <p>Price: <span id="txt"></span></p>
+  <p>Rents: <span id="txt"></span></p>
 
   <script>
-    function loadPHPDoc(rent) {
+    function loadPHPDoc() {
       var xmlhttp = new XMLHttpRequest();
       xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
           document.getElementById("txt").innerHTML = this.responseText;
         }
       };
-      xmlhttp.open("POST", "list.php?req="+rent, true);
+      xmlhttp.open("GET", "rents.php", true);
       xmlhttp.send();
     }
 
