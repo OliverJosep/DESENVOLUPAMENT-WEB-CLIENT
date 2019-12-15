@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+
+	<link rel="shortcut icon" href="#">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"/>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<title>Prueba</title>
+</head>
+<body>
+	<div class="container" id="productos">
+	</div>
+
+	<script type="text/javascript">
+		$(document).ready(function(){
+			var listProducts = [];
+			var xhttp = new XMLHttpRequest();
+      xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+          var productos = JSON.parse(this.responseText);
+
+					var i=0;
+          for (producto in productos) {
+
+            var id = productos[producto].ID;
+            var name = productos[producto].nombre;
+            var price = productos[producto].precio;
+            var quantity = productos[producto].cantidad;
+            var color = productos[producto].color;
+            var img = "img/"+productos[producto].img;
+
+						listProducts = new Product { name: name, price: price, quantity: quantity, color: color, img:img };
+
+            // var colDIV = $("<div/>",{class:"col-sm-6"});
+            // var cardDIV = $("<div/>", {class:"card"});
+            // var cardIMG = $("<img/>",{class:"card-img-top", src:img, alt:"card image", style:"width:100%"});
+            // cardDIV.append(cardIMG);
+            // var cardBody = $("<div/>",{class:"card-body"});
+            // var cardH4 = $("<h4/>",{class:"card-title", text:name});
+            // var cardP = $("<p/>",{class:"card-text", text:price});
+            // cardBody.append(cardH4, cardP);
+            // cardDIV.append(cardBody);
+            // colDIV.append(cardDIV);
+            // rowDIV.append(colDIV);
+          }
+        }
+      };
+      xhttp.open("GET", "productos.txt", true);
+      xhttp.send();
+
+			console.log(products);
+		});
+	</script>
+</body>
+</html>
