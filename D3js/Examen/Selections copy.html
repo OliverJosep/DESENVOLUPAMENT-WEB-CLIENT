@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <title>D3</title>
+</head>
+
+<style>
+
+  body{
+    background-color: gray;
+  }
+
+</style>
+
+<body>
+
+<ul id="list">
+  <li></li>
+  <li></li>
+</ul>
+
+<ul id="list2">
+  <li></li>
+  <li></li>
+</ul>
+<input type="button" name="remove" value="Remove" onclick="javascript:remove()">
+
+  <p></p>
+  <div></div>
+
+  <script>
+
+    d3.select("#list")
+      .selectAll("li")
+      .data([10,20,30,40])
+      .text(function(d) 
+        {return d;})
+      .enter()
+      .append('li')
+      .text(function(d)
+        {return d})
+      .style("color","red");
+
+    d3.select("#list2")
+      .selectAll("li")
+      .data([10,20,30,40,50])
+      .text(function(d) 
+        {return d;})
+      .enter()
+      .append('li')
+      .text(function(d, i) {
+        return d + ' Index: ' + i
+      })
+      .style("color","red");
+
+    function remove() {
+      d3.select("#list2")
+        .selectAll("li")
+        .data([10,20,30,40])
+        .exit()
+        .remove()
+    }
+
+    d3.select('p')
+      .datum('String')
+      .text(function(d) {
+        return d;
+      });
+
+    d3.select('div')
+      .datum(150)
+      .append('p')
+      .text(function(d) {
+        return d
+      });
+
+
+
+  </script>
+  
+</body>
+</html>

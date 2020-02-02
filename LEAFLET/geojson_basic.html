@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Leaflet</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<!-- css -->
+    	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    	   crossorigin=""/>
+    	
+    	<!-- js -->
+    	<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+    	   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+    	   crossorigin=""></script>
+
+    	<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	</head>
+	<body>
+		<h1>LEAFLET - GeoJSON Basic. </h1>
+		<div id="meuMapa" style="width:800px;height:600px;"></div>
+		<button id="b1">CANVIA ESTIL</button>
+<script>
+
+  
+
+	// Coordenades
+	var coordManacor = [39.569167469384524,3.2097057711208663];
+	var coordLasarte 	 = [43.272940, -2.017371];
+
+
+	var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
+				'<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+		mbUrl = 'https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoicHJvZmV3ZWIiLCJhIjoiY2pwM3JxeHR3MGF6cjNrcXcwbmh0MGZtOCJ9.mxvmjOpVymwltGGlcxHx8g';
+
+	// Capes del mapa
+	var streets   = L.tileLayer(mbUrl, {id: 'mapbox.streets', attribution: mbAttr});
+
+	// Mapa amb capes
+	var m = L.map('meuMapa', {
+			center: [41.077602, 1.126107],
+			zoom: 6,
+			layers: [streets]
+		});
+
+	// Marcador sobre el mapa
+	var marker = L.marker(coordManacor).addTo(m);
+	var marker = L.marker(coordLasarte).addTo(m);
+
+
+	// GEOJSON ---------------------
+	var geojsonInfo = {
+	  "type": "FeatureCollection",
+	  "features": [
+	    {
+	      "type": "Feature",
+	      "properties": {},
+	      "geometry": {
+	        "type": "Polygon",
+	        "coordinates": [
+	          [
+	            [coordManacor[1], coordManacor[0]],
+	            [coordLasarte[1], coordLasarte[0]]
+	          ]
+	        ]
+	      }
+	    }
+	  ]
+	};
+
+	// Estils a aplicar al poligon GeoJson
+	var estilsArea = [
+			{
+			    "color": "#ff7800",
+			    "weight": 5,
+			    "opacity": 1
+			},
+			{
+				"color": "#ffd600",
+				"weight": 4,
+				"opacity": 1
+			},
+			{
+				"color": "#f00",
+				"weight": 4,
+				"opacity": 1
+			},
+			{
+				"color": "#0005ff",
+				"weight": 4,
+				"opacity": 1
+			}
+		];
+
+	// Afegir GeoJSON i Estils al mapa
+	var g = L.geoJson(geojsonInfo, estilsArea[0]).addTo(m);
+
+	var n = 0;
+
+	// Events
+	$("#b1").click(function(){
+		n++;
+		n = n%estilsArea.length;
+		console.log("Aplicant estil "+n);
+		g.setStyle(estilsArea[n]);
+	});
+  
+
+
+</script>
+</body>
+</html>

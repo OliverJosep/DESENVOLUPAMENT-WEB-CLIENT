@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <title>D3</title>
+</head>
+<style>
+  .bg{
+    background-color: yellow;
+  }
+</style>
+<body>
+
+  <div class="prova je">Hei</div><br>
+  <div class="prova2 je">Hei</div><br>
+  <div class="prova3 je">Hei</div><br>
+
+  <script>
+
+    d3.select(".prova")
+      .append('span')
+      .text(' Hola bb ')
+      .append('span')
+      .text("adeu");
+
+    d3.select(".prova2")
+      .html('<span>Hola</span> <h1>bernat</h1>')
+      .attr("style", "color:orange")
+
+    d3.select(".prova3")
+      .html(' <h1>bernat</h1>')
+      .style('color', 'red')
+
+    d3.select(".prova")
+      .classed('bg', true)
+
+    console.log(d3.select(".prova").classed('bg'))
+
+    d3.selectAll(".je")
+      .style('background-color', 'pink')
+
+
+
+
+  </script>
+  
+</body>
+</html>
